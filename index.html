@@ -71,6 +71,41 @@
       margin-top: 4px;
     }
 
+    .date-filed {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .date-filed label {
+      color: var(--text-main);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .date-filed input {
+      min-height: 30px;
+      padding: 4px 8px;
+      color: var(--text-main);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font: inherit;
+      font-size: 12px;
+    }
+
+    .date-filed input:focus {
+      outline: 2px solid #bfdbfe;
+      border-color: var(--primary-light);
+    }
+
     .header-actions {
       display: flex;
       gap: 10px;
@@ -350,6 +385,30 @@
         print-color-adjust: exact;
       }
     }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .header {
+        align-items: flex-start;
+        padding: 18px;
+      }
+
+      .header-title h1 {
+        font-size: 19px;
+      }
+
+      .header-actions {
+        flex-wrap: wrap;
+      }
+
+      .date-filed {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
   </style>
 </head>
 <body>
@@ -360,6 +419,10 @@
     <div class="header-title">
       <h1>WEEKLY PROGRESS IN HIGH COURT MATTERS</h1>
       <p>Official Weekly Case Management & Tracking Dashboard</p>
+      <div class="date-filed">
+        <label for="date-filed">Date Filed</label>
+        <input id="date-filed" name="dateFiled" type="date" aria-label="Date filed">
+      </div>
     </div>
     <div class="header-actions">
       <button class="btn btn-secondary" onclick="exportCSV()">📥 Export CSV</button>
